@@ -123,7 +123,7 @@ Content-Length: 103
 
 Now both the `message` and the `description` and the corresponding counts have all changed.
 
-In this Greeting resource example there are various component sets involved. See the following source code.
+In this `Greeting` resource example there are various component sets involved. See the following source code.
 
 ```
 io.vlingo.hello.Bootstrap
