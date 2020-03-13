@@ -145,14 +145,16 @@ io.vlingo.hello.infra.persistence.* - lower-level persistence setup and storage 
 
 Documentation for the above components is found in the following links.
 
-[Starting the World](https://docs.vlingo.io/vlingo-actors#starting-and-terminating-the-actor-runtime){:target="_blank"}
+**Suggestion: Right click and open in a new tab.**
 
-[CQRS Command and Query Models](https://docs.vlingo.io/vlingo-lattice/entity-cqrs){:target="_blank"}
+[Starting the World](https://docs.vlingo.io/vlingo-actors#starting-and-terminating-the-actor-runtime)
 
-[StatefulEntity](https://docs.vlingo.io/vlingo-lattice/entity-cqrs#statefulentity-example){:target="_blank"}
+[CQRS Command and Query Models](https://docs.vlingo.io/vlingo-lattice/entity-cqrs)
 
-[StateStore Persistence](https://docs.vlingo.io/vlingo-symbio/state-storage){:target="_blank"}
+[StatefulEntity](https://docs.vlingo.io/vlingo-lattice/entity-cqrs#statefulentity-example)
 
-[Query Model Projections](https://docs.vlingo.io/vlingo-lattice/projections){:target="_blank"}
+[StateStore Persistence](https://docs.vlingo.io/vlingo-symbio/state-storage)
 
-[Reactive Storage](https://docs.vlingo.io/vlingo-symbio){:target="_blank"}
+[Query Model Projections](https://docs.vlingo.io/vlingo-lattice/projections)
+
+[Reactive Storage](https://docs.vlingo.io/vlingo-symbio)
