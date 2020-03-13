@@ -92,7 +92,7 @@ Content-Length: 105
 Next `PATCH` the `Greeting` resource's `message`.
 
 ```
-$ curl -i -X PATCH -H "Content-Type: application/json" -d '{"value":"Yo"}' http://localhost:8080/greetings/242/message
+$ curl -i -X PATCH -H "Content-Type: application/json" -d '{"value":"Yo"}' http://localhost:18080/greetings/242/message
 ```
 
 The resource responds with the following. Note that the `message` has changed to `"Yo"`, and the `messageChangedCount` is now `1`.
@@ -109,7 +109,7 @@ Next `PATCH` the `Greeting` resource's `description`.
 
 
 ```
-$ curl -i -X PATCH -H "Content-Type: application/json" -d '{"value":"Says Yo"}' http://localhost:8080/greetings/242/description
+$ curl -i -X PATCH -H "Content-Type: application/json" -d '{"value":"Says Yo"}' http://localhost:18080/greetings/242/description
 ```
 
 The resource responds with the following. Note that the `description` has changed to `"Says Yo"`, and the `descriptionChangedCount` is now `1`.
