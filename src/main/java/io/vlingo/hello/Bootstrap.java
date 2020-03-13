@@ -8,11 +8,16 @@
 package io.vlingo.hello;
 
 import io.vlingo.actors.World;
+import io.vlingo.hello.infra.persistence.CommandModelStoreProvider;
+import io.vlingo.hello.infra.persistence.ProjectionDispatcherProvider;
+import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
+import io.vlingo.hello.resource.GreetingResource;
 import io.vlingo.hello.resource.HelloResource;
 import io.vlingo.http.resource.Configuration.Sizing;
 import io.vlingo.http.resource.Configuration.Timing;
 import io.vlingo.http.resource.Resources;
 import io.vlingo.http.resource.Server;
+import io.vlingo.lattice.model.stateful.StatefulTypeRegistry;
 
 /**
  * Start the service with a Server.
@@ -20,6 +25,8 @@ import io.vlingo.http.resource.Server;
 public class Bootstrap {
   private static Bootstrap instance;
   private static int Port = 18080;
+
+  private final StatefulTypeRegistry registry;
 
   public final Server server;
   public final World world;
@@ -48,9 +55,21 @@ public class Bootstrap {
   private Bootstrap(int port) {
     this.world = World.startWithDefaults("hello-world");
 
-    final HelloResource helloResource = new HelloResource();
+    registry = new StatefulTypeRegistry(world);
 
-    this.server = Server.startWith(world.stage(), Resources.are(helloResource.routes()), port, Sizing.define(), Timing.define());
+    QueryModelStoreProvider.using(world.stage(), registry);
+    CommandModelStoreProvider.using(world.stage(), registry, ProjectionDispatcherProvider.using(world.stage()).storeDispatcher);
+
+    HelloResource helloResource = new HelloResource();
+    GreetingResource greetingResource = new GreetingResource(this.world);
+
+    this.server =
+            Server.startWith(
+                    world.stage(),
+                    Resources.are(helloResource.routes(), greetingResource.routes()),
+                    port,
+                    Sizing.define(),
+                    Timing.define());
 
     registerShutdownHook();
 
