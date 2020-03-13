@@ -143,7 +143,7 @@ io.vlingo.hello.infra.persistence.* - lower-level persistence setup and storage 
 ```
 
 
-The documentation for the above components are found here.
+Documentation for the above components is found in the following links.
 
 [Starting the World](https://docs.vlingo.io/vlingo-actors#starting-and-terminating-the-actor-runtime)
 
