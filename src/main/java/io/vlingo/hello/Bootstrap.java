@@ -69,7 +69,7 @@ public class Bootstrap {
                     Resources.are(helloResource.routes(), greetingResource.routes()),
                     port,
                     Sizing.define(),
-                    Timing.define());
+                    Timing.defineWith(7, 3, 100));
 
     registerShutdownHook();
 
