@@ -7,7 +7,7 @@
 
 package io.vlingo.hello.infra.persistence;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import io.vlingo.common.Completes;
@@ -30,6 +30,6 @@ public class QueriesActor extends StateStoreQueryActor implements Queries {
 
   @Override
   public Completes<Collection<GreetingData>> greetings() {
-    return completes().with(Arrays.asList()); // TODO: implement
+    return streamAllOf(GreetingData.class, new ArrayList<>());
   }
 }
