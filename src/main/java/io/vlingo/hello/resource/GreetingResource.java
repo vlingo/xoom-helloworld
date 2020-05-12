@@ -28,6 +28,7 @@ import io.vlingo.hello.infra.MessageData;
 import io.vlingo.hello.infra.persistence.Queries;
 import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
 import io.vlingo.hello.model.Greeting;
+import io.vlingo.hello.model.GreetingEntity;
 import io.vlingo.http.Response;
 import io.vlingo.http.resource.Resource;
 
@@ -49,14 +50,14 @@ public class GreetingResource {
   }
 
   public Completes<Response> changeGreetingMessage(String greetingId, MessageData message) {
-    return world.stage().actorOf(Greeting.class, addressFactory.from(greetingId))
+    return resolve(greetingId)
             .andThenTo(greeting -> greeting.withMessage(message.value))
             .andThenTo(state -> Completes.withSuccess(Response.of(Ok, serialized(GreetingData.from(state)))))
             .otherwise(noGreeting -> Response.of(NotFound, greetingLocation(greetingId)));
   }
 
   public Completes<Response> changeGreetingDescription(String greetingId, DescriptionData description) {
-    return world.stage().actorOf(Greeting.class, addressFactory.from(greetingId))
+    return resolve(greetingId)
             .andThenTo(greeting -> greeting.withDescription(description.value))
             .andThenTo(state -> Completes.withSuccess(Response.of(Ok, serialized(GreetingData.from(state)))))
             .otherwise(noGreeting -> Response.of(NotFound, greetingLocation(greetingId)));
@@ -92,8 +93,12 @@ public class GreetingResource {
         .param(String.class)
         .handle(this::queryGreeting));
   }
-
+  
   private String greetingLocation(final String greetingId) {
     return "/greetings/" + greetingId;
+  }
+
+  private Completes<Greeting> resolve(final String greetingId) {
+    return world.stage().actorOf(Greeting.class, addressFactory.from(greetingId), GreetingEntity.class);
   }
 }
