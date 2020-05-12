@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.vlingo</groupId>
   <artifactId>vlingo-helloworld</artifactId>
-  <version>1.2.8</version>
+  <version>1.2.21-SNAPSHOT</version>
   <name>vlingo-helloworld</name>
   <description>A "Hello, World!" service that demonstrates the use of the standard components of the vlingo/PLATFORM.</description>
   <url>https://github.com/vlingo/vlingo-helloworld</url>
@@ -33,17 +33,17 @@
     <dependency>
       <groupId>io.vlingo</groupId>
       <artifactId>vlingo-http</artifactId>
-      <version>1.2.8</version>
+      <version>1.2.21-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>io.vlingo</groupId>
       <artifactId>vlingo-lattice</artifactId>
-      <version>1.2.8</version>
+      <version>1.2.21-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>io.vlingo</groupId>
       <artifactId>vlingo-symbio</artifactId>
-      <version>1.2.8</version>
+      <version>1.2.21-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>
