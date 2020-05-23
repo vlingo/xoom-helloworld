@@ -13,8 +13,14 @@ import io.vlingo.lattice.model.stateful.StatefulEntity;
 public class GreetingEntity extends StatefulEntity<GreetingState> implements Greeting {
   private GreetingState state;
 
+  // when new
   public GreetingEntity(String id) {
     super(id);
+  }
+
+  // when existing
+  public GreetingEntity() {
+    super();
   }
 
   @Override
