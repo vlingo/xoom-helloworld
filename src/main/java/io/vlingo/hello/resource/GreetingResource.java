@@ -70,7 +70,7 @@ public class GreetingResource {
 
   public Completes<Response> queryGreeting(String greetingId) {
     return queries.greetingOf(greetingId)
-            .andThenTo(data -> Completes.withSuccess(Response.of(Ok, serialized(data))))
+            .andThenTo(GreetingData.empty(), data -> Completes.withSuccess(Response.of(Ok, serialized(data))))
             .otherwise(noData -> Response.of(NotFound, greetingLocation(greetingId)));
   }
 
