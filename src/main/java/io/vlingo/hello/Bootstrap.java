@@ -64,12 +64,11 @@ public class Bootstrap {
     GreetingResource greetingResource = new GreetingResource(this.world);
 
     this.server =
-            Server.startWith(
+            Server.startWithAgent(
                     world.stage(),
                     Resources.are(helloResource.routes(), greetingResource.routes()),
                     port,
-                    Sizing.define(),
-                    Timing.defineWith(7, 3, 100));
+                    2);
 
     registerShutdownHook();
 
