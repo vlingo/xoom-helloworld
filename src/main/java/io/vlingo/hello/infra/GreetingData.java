@@ -14,6 +14,8 @@ import io.vlingo.hello.model.GreetingState;
  * as well as resource queries.
  */
 public class GreetingData {
+  private static GreetingData Empty = new GreetingData("", "", 0, "", 0);
+  
   public final String id;
   public final String message;
   public final int messageChangedCount;
@@ -21,7 +23,7 @@ public class GreetingData {
   public final int descriptionChangedCount;
 
   public static GreetingData empty() {
-    return new GreetingData("", "", 0, "", 0);
+    return Empty;
   }
 
   public static GreetingData from(GreetingState state) {
