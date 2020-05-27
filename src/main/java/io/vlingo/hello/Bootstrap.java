@@ -29,5 +29,4 @@ public class Bootstrap implements XoomInitializationAware {
     QueryModelStoreProvider.using(stage, registry);
     CommandModelStoreProvider.using(stage, registry, ProjectionDispatcherProvider.using(stage).storeDispatcher);
   }
-
 }

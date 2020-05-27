@@ -38,31 +38,31 @@ public class GreetingResource extends ResourceHandler {
   public Completes<Response> defineGreeting(GreetingData data) {
     return Greeting
       .defineWith(stage, data.message, data.description)
-      .andThenTo(state -> Completes.withSuccess(Response.of(Created, headers(of(Location, greetingLocation(state.id))), serialized(GreetingData.from(state)))));
+      .andThenTo(state -> Completes.withSuccess(Response.of(Created, headers(of(Location, greetingLocation(state.id))).and(of(ContentType, "application/json")), serialized(GreetingData.from(state)))));
   }
 
   public Completes<Response> changeGreetingMessage(String greetingId, MessageData message) {
     return resolve(greetingId)
             .andThenTo(greeting -> greeting.withMessage(message.value))
-            .andThenTo(state -> Completes.withSuccess(Response.of(Ok, serialized(GreetingData.from(state)))))
+            .andThenTo(state -> Completes.withSuccess(Response.of(Ok, headers(of(ContentType, "application/json")), serialized(GreetingData.from(state)))))
             .otherwise(noGreeting -> Response.of(NotFound, greetingLocation(greetingId)));
   }
 
   public Completes<Response> changeGreetingDescription(String greetingId, DescriptionData description) {
     return resolve(greetingId)
             .andThenTo(greeting -> greeting.withDescription(description.value))
-            .andThenTo(state -> Completes.withSuccess(Response.of(Ok, serialized(GreetingData.from(state)))))
+            .andThenTo(state -> Completes.withSuccess(Response.of(Ok, headers(of(ContentType, "application/json")), serialized(GreetingData.from(state)))))
             .otherwise(noGreeting -> Response.of(NotFound, greetingLocation(greetingId)));
   }
 
   public Completes<Response> queryGreetings() {
     return queries.greetings()
-            .andThenTo(data -> Completes.withSuccess(Response.of(Ok, serialized(data))));
+            .andThenTo(data -> Completes.withSuccess(Response.of(Ok, headers(of(ContentType, "application/json")), serialized(data))));
   }
 
   public Completes<Response> queryGreeting(String greetingId) {
     return queries.greetingOf(greetingId)
-            .andThenTo(GreetingData.empty(), data -> Completes.withSuccess(Response.of(Ok, serialized(data))))
+            .andThenTo(GreetingData.empty(), data -> Completes.withSuccess(Response.of(Ok, headers(of(ContentType, "application/json")), serialized(data))))
             .otherwise(noData -> Response.of(NotFound, greetingLocation(greetingId)));
   }
 

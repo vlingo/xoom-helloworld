@@ -52,6 +52,10 @@ public class ProjectionDispatcherProvider {
     return instance;
   }
 
+  public static void reset() {
+    instance = null;
+  }
+
   private ProjectionDispatcherProvider(final Dispatcher storeDispatcher, final ProjectionDispatcher projectionDispatcher) {
     this.storeDispatcher = storeDispatcher;
     this.projectionDispatcher = projectionDispatcher;
