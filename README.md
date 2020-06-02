@@ -1,6 +1,6 @@
 # vlingo-helloworld
 
-A "Hello, World!" service that demonstrates the use of the standard components of the vlingo/PLATFORM.
+A "Hello, World!" service that demonstrates the use of the standard components of the VLINGO/PLATFORM.
 
 Open a console/command window so you can build the `vlingo-helloworld` and start it by executing the built `jar`:
 
