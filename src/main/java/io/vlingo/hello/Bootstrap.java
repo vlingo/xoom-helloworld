@@ -22,7 +22,7 @@ import io.vlingo.xoom.annotation.initializer.Xoom;
 public class Bootstrap implements XoomInitializationAware {
 
   @Override
-  public void onInit(Stage stage) {
+  public void onInit(final Stage stage) {
     final StatefulTypeRegistry registry = new StatefulTypeRegistry(stage.world());
     QueryModelStoreProvider.using(stage, registry);
     CommandModelStoreProvider.using(stage, registry, ProjectionDispatcherProvider.using(stage).storeDispatcher);
