@@ -7,17 +7,21 @@
 
 package io.vlingo.hello.resource;
 
-import static io.vlingo.http.resource.ResourceBuilder.get;
-import static io.vlingo.http.resource.ResourceBuilder.resource;
-import static io.vlingo.http.Response.Status.Ok;
-
+import io.vlingo.actors.Stage;
 import io.vlingo.common.Completes;
 import io.vlingo.http.Response;
 import io.vlingo.http.resource.Resource;
+import io.vlingo.http.resource.ResourceHandler;
 
-public class HelloResource {
+import static io.vlingo.http.Response.Status.Ok;
+import static io.vlingo.http.resource.ResourceBuilder.get;
+import static io.vlingo.http.resource.ResourceBuilder.resource;
+
+public class HelloResource extends ResourceHandler {
   private static final String Hello = "Hello, #!";
   private static final String World = "World";
+
+  public HelloResource(final Stage stage) { }
 
   public Completes<Response> hello() {
     return helloWhom(World);
@@ -35,4 +39,5 @@ public class HelloResource {
         .param(String.class)
         .handle(this::helloWhom));
   }
+
 }

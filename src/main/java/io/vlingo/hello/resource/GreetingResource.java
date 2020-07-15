@@ -7,20 +7,7 @@
 
 package io.vlingo.hello.resource;
 
-import static io.vlingo.common.serialization.JsonSerialization.serialized;
-import static io.vlingo.http.Response.Status.Created;
-import static io.vlingo.http.Response.Status.NotFound;
-import static io.vlingo.http.Response.Status.Ok;
-import static io.vlingo.http.ResponseHeader.Location;
-import static io.vlingo.http.ResponseHeader.headers;
-import static io.vlingo.http.ResponseHeader.of;
-import static io.vlingo.http.resource.ResourceBuilder.get;
-import static io.vlingo.http.resource.ResourceBuilder.patch;
-import static io.vlingo.http.resource.ResourceBuilder.post;
-import static io.vlingo.http.resource.ResourceBuilder.resource;
-
-import io.vlingo.actors.AddressFactory;
-import io.vlingo.actors.World;
+import io.vlingo.actors.Stage;
 import io.vlingo.common.Completes;
 import io.vlingo.hello.infra.DescriptionData;
 import io.vlingo.hello.infra.GreetingData;
@@ -31,21 +18,26 @@ import io.vlingo.hello.model.Greeting;
 import io.vlingo.hello.model.GreetingEntity;
 import io.vlingo.http.Response;
 import io.vlingo.http.resource.Resource;
+import io.vlingo.http.resource.ResourceHandler;
 
-public class GreetingResource {
-  private final AddressFactory addressFactory;
+import static io.vlingo.common.serialization.JsonSerialization.serialized;
+import static io.vlingo.http.Response.Status.*;
+import static io.vlingo.http.ResponseHeader.*;
+import static io.vlingo.http.resource.ResourceBuilder.*;
+
+public class GreetingResource extends ResourceHandler {
+
+  private final Stage stage;
   private final Queries queries;
-  private final World world;
 
-  public GreetingResource(World world) {
-    this.world = world;
-    this.addressFactory = world.addressFactory();
+  public GreetingResource(final Stage stage) {
+    this.stage = stage;
     this.queries = QueryModelStoreProvider.instance().queries;
   }
 
   public Completes<Response> defineGreeting(GreetingData data) {
     return Greeting
-      .defineWith(world.stage(), data.message, data.description)
+      .defineWith(stage, data.message, data.description)
       .andThenTo(state -> Completes.withSuccess(Response.of(Created, headers(of(Location, greetingLocation(state.id))), serialized(GreetingData.from(state)))));
   }
 
@@ -74,6 +66,7 @@ public class GreetingResource {
             .otherwise(noData -> Response.of(NotFound, greetingLocation(greetingId)));
   }
 
+  @Override
   public Resource<?> routes() {
     return resource("Greeting Resource",
       post("/greetings")
@@ -99,6 +92,6 @@ public class GreetingResource {
   }
 
   private Completes<Greeting> resolve(final String greetingId) {
-    return world.stage().actorOf(Greeting.class, addressFactory.from(greetingId), GreetingEntity.class);
+    return stage.actorOf(Greeting.class, stage.addressFactory().from(greetingId), GreetingEntity.class);
   }
 }
