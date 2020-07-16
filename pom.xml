@@ -65,7 +65,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>io.vlingo.hello.Bootstrap</mainClass>
+          <mainClass>io.vlingo.hello.XoomInitializer</mainClass>
         </configuration>
       </plugin>
       <plugin>
