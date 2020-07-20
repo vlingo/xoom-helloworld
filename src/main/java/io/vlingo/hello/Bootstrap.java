@@ -13,12 +13,14 @@ import io.vlingo.hello.infra.persistence.ProjectionDispatcherProvider;
 import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
 import io.vlingo.lattice.model.stateful.StatefulTypeRegistry;
 import io.vlingo.xoom.XoomInitializationAware;
+import io.vlingo.xoom.annotation.initializer.ResourceHandlers;
 import io.vlingo.xoom.annotation.initializer.Xoom;
 
 /**
  * Start the service with a Server.
  */
 @Xoom(name = "hello-world")
+@ResourceHandlers(packages = "io.vlingo.hello.resource")
 public class Bootstrap implements XoomInitializationAware {
 
   @Override
