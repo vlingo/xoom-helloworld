@@ -7,7 +7,7 @@ Open a console/command window so you can build the `vlingo-helloworld` and start
 ```
 $ mvn clean package
 ...
-$ java -jar target/vlingo-helloworld-withdeps.jar
+$ java -jar target/vlingo-helloworld.jar
 ```
 
 The above `java` command executes the `jar` on the default port `18080`. If you would like to use
