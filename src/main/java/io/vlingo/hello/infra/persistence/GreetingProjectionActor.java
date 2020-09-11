@@ -8,6 +8,7 @@
 package io.vlingo.hello.infra.persistence;
 
 import io.vlingo.hello.infra.GreetingData;
+import io.vlingo.hello.infrastructure.persistence.QueryModelStateStoreProvider;
 import io.vlingo.hello.model.Greeting.Operation;
 import io.vlingo.hello.model.GreetingState;
 import io.vlingo.lattice.model.projection.Projectable;
@@ -17,7 +18,7 @@ public class GreetingProjectionActor extends StateStoreProjectionActor<GreetingD
   private Operation becauseOf;
 
   public GreetingProjectionActor() {
-    super(QueryModelStoreProvider.instance().store);
+    super(QueryModelStateStoreProvider.instance().store);
   }
 
   @Override

@@ -8,10 +8,6 @@
 package io.vlingo.hello;
 
 import io.vlingo.actors.Stage;
-import io.vlingo.hello.infra.persistence.CommandModelStoreProvider;
-import io.vlingo.hello.infra.persistence.ProjectionDispatcherProvider;
-import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
-import io.vlingo.lattice.model.stateful.StatefulTypeRegistry;
 import io.vlingo.xoom.XoomInitializationAware;
 import io.vlingo.xoom.annotation.initializer.ResourceHandlers;
 import io.vlingo.xoom.annotation.initializer.Xoom;
@@ -25,9 +21,6 @@ public class Bootstrap implements XoomInitializationAware {
 
   @Override
   public void onInit(final Stage stage) {
-    final StatefulTypeRegistry registry = new StatefulTypeRegistry(stage.world());
-    QueryModelStoreProvider.using(stage, registry);
-    CommandModelStoreProvider.using(stage, registry, ProjectionDispatcherProvider.using(stage).storeDispatcher);
   }
 
 }

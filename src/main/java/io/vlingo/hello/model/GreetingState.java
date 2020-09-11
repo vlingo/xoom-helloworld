@@ -7,10 +7,12 @@
 
 package io.vlingo.hello.model;
 
+import io.vlingo.symbio.store.object.StateObject;
+
 /**
  * State held by the Greeting.
  */
-public final class GreetingState {
+public final class GreetingState extends StateObject {
   public final String id;
   public final Message message;
   public final Description description;
