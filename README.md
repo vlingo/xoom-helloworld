@@ -7,14 +7,14 @@ Open a console/command window so you can build the `vlingo-helloworld` and start
 ```
 $ mvn clean package
 ...
-$ java -jar target/vlingo-helloworld-withdeps.jar
+$ java -jar target/vlingo-helloworld.jar
 ```
 
 The above `java` command executes the `jar` on the default port `18080`. If you would like to use
 a different port, you must provide it on the command line. This command uses port `8080`.
 
 ```
-$ java -jar target/vlingo-helloworld-withdeps.jar 8080
+$ java -jar target/vlingo-helloworld.jar 8080
 ```
 
 The following examples assume that have started the service with the default port, `18080`.
