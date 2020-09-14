@@ -45,6 +45,10 @@ public class QueryModelStoreProvider {
     return instance;
   }
 
+  public static void reset() {
+    instance = null;
+  }
+
   @SuppressWarnings({ "unchecked", "rawtypes" })
   private QueryModelStoreProvider(final StatefulTypeRegistry registry, final StateStore store, final Queries queries) {
     this.store = store;

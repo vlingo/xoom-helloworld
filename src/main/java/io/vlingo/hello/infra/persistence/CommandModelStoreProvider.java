@@ -52,6 +52,10 @@ public class CommandModelStoreProvider {
     return instance;
   }
 
+  public static void reset() {
+    instance = null;
+  }
+
   @SuppressWarnings({ "unchecked", "rawtypes" })
   private CommandModelStoreProvider(StatefulTypeRegistry registry, StateStore store, DispatcherControl dispatcherControl) {
     this.store = store;
