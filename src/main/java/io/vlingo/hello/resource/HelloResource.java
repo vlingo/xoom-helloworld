@@ -10,6 +10,7 @@ package io.vlingo.hello.resource;
 import io.vlingo.actors.Stage;
 import io.vlingo.common.Completes;
 import io.vlingo.http.Response;
+import io.vlingo.http.resource.DynamicResourceHandler;
 import io.vlingo.http.resource.Resource;
 import io.vlingo.http.resource.ResourceHandler;
 
@@ -17,11 +18,11 @@ import static io.vlingo.http.Response.Status.Ok;
 import static io.vlingo.http.resource.ResourceBuilder.get;
 import static io.vlingo.http.resource.ResourceBuilder.resource;
 
-public class HelloResource extends ResourceHandler {
+public class HelloResource extends DynamicResourceHandler {
   private static final String Hello = "Hello, #!";
   private static final String World = "World";
 
-  public HelloResource(final Stage stage) { }
+  public HelloResource(final Stage stage) { super(stage); }
 
   public Completes<Response> hello() {
     return helloWhom(World);

@@ -17,6 +17,7 @@ import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
 import io.vlingo.hello.model.Greeting;
 import io.vlingo.hello.model.GreetingEntity;
 import io.vlingo.http.Response;
+import io.vlingo.http.resource.DynamicResourceHandler;
 import io.vlingo.http.resource.Resource;
 import io.vlingo.http.resource.ResourceHandler;
 
@@ -25,19 +26,18 @@ import static io.vlingo.http.Response.Status.*;
 import static io.vlingo.http.ResponseHeader.*;
 import static io.vlingo.http.resource.ResourceBuilder.*;
 
-public class GreetingResource extends ResourceHandler {
+public class GreetingResource extends DynamicResourceHandler {
 
-  private final Stage stage;
   private final Queries queries;
 
   public GreetingResource(final Stage stage) {
-    this.stage = stage;
+    super(stage);
     this.queries = QueryModelStoreProvider.instance().queries;
   }
 
   public Completes<Response> defineGreeting(GreetingData data) {
     return Greeting
-      .defineWith(stage, data.message, data.description)
+      .defineWith(stage(), data.message, data.description)
       .andThenTo(state -> Completes.withSuccess(Response.of(Created, headers(of(Location, greetingLocation(state.id))).and(of(ContentType, "application/json")), serialized(GreetingData.from(state)))));
   }
 
@@ -92,6 +92,6 @@ public class GreetingResource extends ResourceHandler {
   }
 
   private Completes<Greeting> resolve(final String greetingId) {
-    return stage.actorOf(Greeting.class, stage.addressFactory().from(greetingId), GreetingEntity.class);
+    return stage().actorOf(Greeting.class, stage().addressFactory().from(greetingId), GreetingEntity.class);
   }
 }
