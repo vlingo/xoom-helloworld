@@ -2,8 +2,6 @@ name: Build
 
 on:
   push:
-    branches:
-    tags: [ '*' ]
   pull_request:
   schedule:
     - cron: '0 4 * * *'
