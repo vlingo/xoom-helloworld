@@ -36,7 +36,7 @@ jobs:
           path: target/*.jar
 
       - name: Notify slack
-        if: always() && github.ref == 'refs/heads/master'
+        if: always() && github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_COLOR: "${{ job.status == 'success' && 'good' || 'danger' }}"
@@ -44,7 +44,7 @@ jobs:
           SLACK_CHANNEL: vlingo-ci
           SLACK_USERNAME: Bob the Builder
           SLACK_ICON: 'https://vlingo.io/wp-content/uploads/cropped-vlingo-favicon-180x180.png'
-          SLACK_FOOTER: ''
+          SLACK_FOOTER: '${{ github.repository }}'
 
       - name: Cleanup
         run: rm -rf ~/.m2/repository/io/vlingo
