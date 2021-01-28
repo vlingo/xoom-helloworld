@@ -1,4 +1,4 @@
-package io.vlingo.hello.resource;
+package io.vlingo.hello.infra.resource;
 
 import io.vlingo.hello.infra.DescriptionData;
 import io.vlingo.hello.infra.GreetingData;

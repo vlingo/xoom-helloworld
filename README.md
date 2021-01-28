@@ -1,5 +1,7 @@
 # vlingo-helloworld
 
+[![Build](https://github.com/vlingo/vlingo-helloworld/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-helloworld/actions?query=workflow%3ABuild)
+
 A "Hello, World!" service that demonstrates the use of the standard components of the VLINGO/PLATFORM.
 
 Open a console/command window so you can build the `vlingo-helloworld` and start it by executing the built `jar`:

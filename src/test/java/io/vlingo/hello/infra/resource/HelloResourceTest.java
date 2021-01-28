@@ -1,4 +1,4 @@
-package io.vlingo.hello.resource;
+package io.vlingo.hello.infra.resource;
 
 import org.junit.Test;
 
