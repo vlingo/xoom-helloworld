@@ -20,7 +20,7 @@ import io.vlingo.xoom.annotation.initializer.Xoom;
  * Start the service with a Server.
  */
 @Xoom(name = "hello-world")
-@ResourceHandlers(packages = "io.vlingo.hello.resource")
+@ResourceHandlers(packages = "io.vlingo.hello.infra.resource")
 public class Bootstrap implements XoomInitializationAware {
 
   @Override
