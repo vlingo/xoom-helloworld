@@ -3,7 +3,6 @@ package io.vlingo.hello.infra.resource;
 import io.vlingo.hello.infra.DescriptionData;
 import io.vlingo.hello.infra.GreetingData;
 import io.vlingo.hello.infra.MessageData;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -97,7 +96,6 @@ public class GreetingResourceTest extends ResourceTestCase {
   }
 
   @Test
-  @Ignore
   public void itReturns404IfGreetingCannotBeFoundForChangingTheMessage() {
     givenJsonClient()
         .body(messageData("New Message"))
@@ -129,7 +127,6 @@ public class GreetingResourceTest extends ResourceTestCase {
   }
 
   @Test
-  @Ignore
   public void itReturns404IfGreetingCannotBeFoundForChangingTheDescription() {
     givenJsonClient()
         .body(descriptionData("New Description"))
