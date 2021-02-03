@@ -99,6 +99,6 @@ public class GreetingResource extends DynamicResourceHandler {
   }
 
   private Completes<Greeting> resolve(final String greetingId) {
-    return stage().actorOf(Greeting.class, stage().addressFactory().from(greetingId), GreetingEntity.class);
+    return stage().actorOf(Greeting.class, stage().addressFactory().from(greetingId));
   }
 }
