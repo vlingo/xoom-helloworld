@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/vlingo-helloworld.jar $PORT
+web: java $JAVA_OPTS -jar target/vlingo-helloworld.jar 8080
