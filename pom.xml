@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.vlingo</groupId>
   <artifactId>vlingo-helloworld</artifactId>
-  <version>1.5.2-SNAPSHOT</version>
+  <version>1.5.1-SNAPSHOT</version>
   <name>vlingo-helloworld</name>
   <description>A "Hello, World!" service that demonstrates the use of the standard components of the vlingo/PLATFORM.</description>
   <url>https://github.com/vlingo/vlingo-helloworld</url>
