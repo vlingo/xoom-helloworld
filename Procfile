@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/vlingo-helloworld.jar 18080
+web: java $JAVA_OPTS -jar target/*.jar 18080
