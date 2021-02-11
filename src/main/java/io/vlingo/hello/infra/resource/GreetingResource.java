@@ -28,7 +28,6 @@ import io.vlingo.hello.infra.MessageData;
 import io.vlingo.hello.infra.persistence.Queries;
 import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
 import io.vlingo.hello.model.Greeting;
-import io.vlingo.hello.model.GreetingEntity;
 import io.vlingo.http.Response;
 import io.vlingo.http.resource.DynamicResourceHandler;
 import io.vlingo.http.resource.Resource;
