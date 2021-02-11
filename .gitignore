@@ -8,7 +8,7 @@ target/
 dependency-reduced-pom.xml
 *.log
 build/
-
+.factorypath
 
 # Intellij
 .idea/
@@ -17,3 +17,6 @@ build/
 *.ipr
 .gradle/
 out/
+
+# VSCode
+.vscode
