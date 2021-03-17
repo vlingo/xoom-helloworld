@@ -17,21 +17,19 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 abstract class ResourceTestCase {
-  private static final AtomicInteger portNumberPool = new AtomicInteger(18080);
-  private int portNumber;
   private XoomInitializer xoom;
 
   @Before
-  public void setUp() {
-    portNumber = portNumberPool.getAndIncrement();
-    xoom = new XoomInitializer(new String[]{"" + portNumber});
-    Boolean startUpSuccess = xoom.server.startUp().await(100);
+  public void setUp() throws Exception {
+    XoomInitializer.main(new String[]{});
+    xoom = XoomInitializer.instance();
+    Boolean startUpSuccess = xoom.server().startUp().await(100);
     assertThat(startUpSuccess, is(equalTo(true)));
   }
 
   @After
   public void cleanUp() {
-    xoom.server.stop();
+    xoom.server().stop();
 
     QueryModelStoreProvider.reset();
     ProjectionDispatcherProvider.reset();
@@ -40,7 +38,7 @@ abstract class ResourceTestCase {
 
   protected RequestSpecification givenJsonClient() {
     return given()
-        .port(portNumber)
+        .port(18080)
         .accept(ContentType.JSON)
         .contentType(ContentType.JSON);
   }

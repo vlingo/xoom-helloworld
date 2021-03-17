@@ -17,7 +17,7 @@ import io.vlingo.common.Completes;
  */
 public interface Greeting {
   static Completes<GreetingState> defineWith(Stage stage, String message, String description) {
-    Address address = stage.world().addressFactory().uniquePrefixedWith("g-");
+    Address address = stage.addressFactory().uniquePrefixedWith("g-");
     Greeting greeting = stage.actorFor(Greeting.class, Definition.has(GreetingEntity.class, Definition.parameters(address.idString())), address);
     return greeting.defineWith(message, description);
   }

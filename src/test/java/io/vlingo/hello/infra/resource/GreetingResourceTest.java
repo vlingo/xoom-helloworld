@@ -5,6 +5,8 @@ import io.vlingo.hello.infra.GreetingData;
 import io.vlingo.hello.infra.MessageData;
 import org.junit.Test;
 
+import java.util.UUID;
+
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.core.StringRegularExpression.matchesRegex;
@@ -19,7 +21,7 @@ public class GreetingResourceTest extends ResourceTestCase {
         .post("/greetings")
         .then()
         .statusCode(201)
-        .header("Location", matchesRegex("/greetings/[0-9]+"))
+        .header("Location", matchesRegex("/greetings/([a-f0-9]{8}(-[a-f0-9]{4}){4}[a-f0-9]{8})"))
         .body(
             "id", notNullValue(),
             "message", equalTo("Message"),
@@ -100,7 +102,7 @@ public class GreetingResourceTest extends ResourceTestCase {
     givenJsonClient()
         .body(messageData("New Message"))
         .when()
-        .patch("/greetings/42424242/message")
+          .patch(String.format("/greetings/%s/message", UUID.randomUUID()))
         .then()
         .statusCode(404);
   }
@@ -131,7 +133,7 @@ public class GreetingResourceTest extends ResourceTestCase {
     givenJsonClient()
         .body(descriptionData("New Description"))
         .when()
-        .patch("/greetings/42424242/description")
+        .patch(String.format("/greetings/%s/description", UUID.randomUUID()))
         .then()
         .statusCode(404);
   }
@@ -143,7 +145,7 @@ public class GreetingResourceTest extends ResourceTestCase {
         .post("/greetings")
         .then()
         .statusCode(201)
-        .header("Location", matchesRegex("/greetings/[0-9]+"))
+        .header("Location", matchesRegex("/greetings/([a-f0-9]{8}(-[a-f0-9]{4}){4}[a-f0-9]{8})"))
         .extract()
         .header("Location");
   }
