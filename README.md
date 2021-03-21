@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/vlingo/vlingo-helloworld/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-helloworld/actions?query=workflow%3ABuild)
 
-A "Hello, World!" service that demonstrates the use of the standard components of the VLINGO XOOM platform SDK.
+VLINGO XOOM platform SDK "Hello, World!" service that demonstrates the use of the standard components commonly used.
 
 ## Building snapshots
 
