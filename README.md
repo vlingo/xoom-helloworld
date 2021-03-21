@@ -2,11 +2,11 @@
 
 [![Build](https://github.com/vlingo/vlingo-helloworld/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-helloworld/actions?query=workflow%3ABuild)
 
-A "Hello, World!" service that demonstrates the use of the standard components of the VLINGO/PLATFORM.
+A "Hello, World!" service that demonstrates the use of the standard components of the VLINGO XOOM platform SDK.
 
 ## Building snapshots
 
-To build the project you'll need access to VLINGO snapshot builds on
+To build the project you'll need access to VLINGO XOOM snapshot builds on
 [GitHub Packages](https://github.com/vlingo/vlingo-platform/packages).
 
 GitHub [requires authentication with a Personal Access Token](https://docs.github.com/en/packages/guides/configuring-apache-maven-for-use-with-github-packages#authenticating-with-a-personal-access-token)
