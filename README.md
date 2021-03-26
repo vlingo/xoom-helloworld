@@ -4,31 +4,6 @@
 
 VLINGO XOOM platform SDK "Hello, World!" service that demonstrates the use of the standard components commonly used.
 
-## Building snapshots
-
-To build the project you'll need access to VLINGO XOOM snapshot builds on
-[GitHub Packages](https://github.com/vlingo/vlingo-platform/packages).
-
-GitHub [requires authentication with a Personal Access Token](https://docs.github.com/en/packages/guides/configuring-apache-maven-for-use-with-github-packages#authenticating-with-a-personal-access-token)
-to use their Maven repository.
-In order to build VLINGO examples locally, you will need to configure the following in your `~/.m2/settings.xml`:
-
-```xml
-<settings>
-  <servers>
-    <server>
-      <id>github</id>
-      <username>GITHUB-USERNAME</username>
-      <password>GITHUB-PERSONAL-ACCESS-TOKEN</password>
-    </server>
-  </servers>
-</settings>
-```
-
-Replace `GITHUB-USERNAME` with your GitHub username, and `GITHUB-PERSONAL-ACCESS-TOKEN` with your Personal Access Token.
-Personal Access Tokens can be created in Settings > Developer Settings > [Personal Access Tokens](https://github.com/settings/tokens) on GitHub.
-Remember to create the token with `read:packages` scope.
-
 ## Building hello world
 
 Open a console/command window so you can build the `vlingo-helloworld` and start it by executing the built `jar`:
