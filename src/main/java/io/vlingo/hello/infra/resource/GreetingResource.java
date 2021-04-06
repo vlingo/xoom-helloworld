@@ -51,14 +51,14 @@ public class GreetingResource extends DynamicResourceHandler {
     return resolve(greetingId)
             .andThenTo(greeting -> greeting.withMessage(message.value))
             .andThenTo(state -> Completes.withSuccess(Response.of(Ok, headers(of(ContentType, "application/json")), serialized(GreetingData.from(state)))))
-            .otherwise(noGreeting -> Response.of(NotFound, greetingLocation(greetingId)));
+            .otherwise(noGreeting -> Response.of(NotFound));
   }
 
   public Completes<Response> changeGreetingDescription(String greetingId, DescriptionData description) {
     return resolve(greetingId)
             .andThenTo(greeting -> greeting.withDescription(description.value))
             .andThenTo(state -> Completes.withSuccess(Response.of(Ok, headers(of(ContentType, "application/json")), serialized(GreetingData.from(state)))))
-            .otherwise(noGreeting -> Response.of(NotFound, greetingLocation(greetingId)));
+            .otherwise(noGreeting -> Response.of(NotFound));
   }
 
   public Completes<Response> queryGreetings() {
@@ -69,7 +69,7 @@ public class GreetingResource extends DynamicResourceHandler {
   public Completes<Response> queryGreeting(String greetingId) {
     return queries.greetingOf(greetingId)
             .andThenTo(GreetingData.empty(), data -> Completes.withSuccess(Response.of(Ok, headers(of(ContentType, "application/json")), serialized(data))))
-            .otherwise(noData -> Response.of(NotFound, greetingLocation(greetingId)));
+            .otherwise(noData -> Response.of(NotFound));
   }
 
   @Override
