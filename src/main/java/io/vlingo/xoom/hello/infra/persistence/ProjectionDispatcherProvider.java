@@ -5,19 +5,19 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.infra.persistence;
+package io.vlingo.xoom.hello.infra.persistence;
 
 import java.util.Arrays;
 import java.util.List;
 
-import io.vlingo.actors.Definition;
-import io.vlingo.actors.Protocols;
-import io.vlingo.actors.Stage;
-import io.vlingo.hello.model.Greeting.Operation;
-import io.vlingo.lattice.model.projection.ProjectionDispatcher;
-import io.vlingo.lattice.model.projection.ProjectionDispatcher.ProjectToDescription;
-import io.vlingo.lattice.model.projection.TextProjectionDispatcherActor;
-import io.vlingo.symbio.store.dispatch.Dispatcher;
+import io.vlingo.xoom.actors.Definition;
+import io.vlingo.xoom.actors.Protocols;
+import io.vlingo.xoom.actors.Stage;
+import io.vlingo.xoom.hello.model.Greeting.Operation;
+import io.vlingo.xoom.lattice.model.projection.ProjectionDispatcher;
+import io.vlingo.xoom.lattice.model.projection.ProjectionDispatcher.ProjectToDescription;
+import io.vlingo.xoom.lattice.model.projection.TextProjectionDispatcherActor;
+import io.vlingo.xoom.symbio.store.dispatch.Dispatcher;
 
 @SuppressWarnings("rawtypes")
 public class ProjectionDispatcherProvider {

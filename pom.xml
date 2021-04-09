@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.vlingo</groupId>
-  <artifactId>vlingo-helloworld</artifactId>
+  <groupId>io.vlingo.xoom</groupId>
+  <artifactId>xoom-helloworld</artifactId>
   <version>1.6.1-SNAPSHOT</version>
-  <name>vlingo-helloworld</name>
+  <name>xoom-helloworld</name>
   <description>A "Hello, World!" service that demonstrates the use of the standard components of the vlingo/PLATFORM.</description>
-  <url>https://github.com/vlingo/vlingo-helloworld</url>
+  <url>https://github.com/vlingo/xoom-helloworld</url>
   <licenses>
     <license>
       <name>Mozilla Public License 2.0</name>
@@ -16,12 +16,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <exec.mainClass>io.vlingo.hello.XoomInitializer</exec.mainClass>
+    <exec.mainClass>io.vlingo.xoom.hello.XoomInitializer</exec.mainClass>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>io.vlingo</groupId>
-      <artifactId>vlingo-xoom</artifactId>
+      <groupId>io.vlingo.xoom</groupId>
+      <artifactId>xoom-turbo</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -49,7 +49,7 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.2.0</version>
         <configuration>
-          <finalName>vlingo-helloworld</finalName>
+          <finalName>xoom-helloworld</finalName>
         </configuration>
       </plugin>
       <plugin>
@@ -108,8 +108,8 @@
           </compilerArgs>
           <annotationProcessorPaths>
             <path>
-              <groupId>io.vlingo</groupId>
-              <artifactId>vlingo-xoom</artifactId>
+              <groupId>io.vlingo.xoom</groupId>
+              <artifactId>xoom-turbo</artifactId>
               <version>${project.version}</version>
             </path>
           </annotationProcessorPaths>

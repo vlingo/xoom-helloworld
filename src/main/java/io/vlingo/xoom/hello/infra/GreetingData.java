@@ -5,9 +5,9 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.infra;
+package io.vlingo.xoom.hello.infra;
 
-import io.vlingo.hello.model.GreetingState;
+import io.vlingo.xoom.hello.model.GreetingState;
 
 /**
  * Greeting data used for HTTP request body, response body,

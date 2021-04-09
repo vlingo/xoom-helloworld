@@ -5,24 +5,24 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.infra;
+package io.vlingo.xoom.hello.infra;
 
 /**
  * Greeting data used for HTTP request body, response body,
  * as well as resource queries.
  */
-public class DescriptionData {
+public class MessageData {
   public final String value;
 
-  public static DescriptionData empty() {
-    return new DescriptionData("");
+  public static MessageData empty() {
+    return new MessageData("");
   }
 
-  public static DescriptionData from(String description) {
-    return new DescriptionData(description);
+  public static MessageData from(String message) {
+    return new MessageData(message);
   }
 
-  public DescriptionData(String description) {
-    this.value = description;
+  public MessageData(String message) {
+    this.value = message;
   }
 }

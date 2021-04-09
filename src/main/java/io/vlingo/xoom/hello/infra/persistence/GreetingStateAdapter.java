@@ -5,13 +5,13 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.infra.persistence;
+package io.vlingo.xoom.hello.infra.persistence;
 
-import io.vlingo.common.serialization.JsonSerialization;
-import io.vlingo.hello.model.GreetingState;
-import io.vlingo.symbio.Metadata;
-import io.vlingo.symbio.State.TextState;
-import io.vlingo.symbio.StateAdapter;
+import io.vlingo.xoom.common.serialization.JsonSerialization;
+import io.vlingo.xoom.hello.model.GreetingState;
+import io.vlingo.xoom.symbio.Metadata;
+import io.vlingo.xoom.symbio.State.TextState;
+import io.vlingo.xoom.symbio.StateAdapter;
 
 public class GreetingStateAdapter implements StateAdapter<GreetingState,TextState> {
 

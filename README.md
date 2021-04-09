@@ -1,24 +1,24 @@
-# vlingo-helloworld
+# xoom-helloworld
 
-[![Build](https://github.com/vlingo/vlingo-helloworld/workflows/Build/badge.svg)](https://github.com/vlingo/vlingo-helloworld/actions?query=workflow%3ABuild)
+[![Build](https://github.com/vlingo/xoom-helloworld/workflows/Build/badge.svg)](https://github.com/vlingo/xoom-helloworld/actions?query=workflow%3ABuild)
 
 VLINGO XOOM platform SDK "Hello, World!" service that demonstrates the use of the standard components commonly used.
 
 ## Building hello world
 
-Open a console/command window so you can build the `vlingo-helloworld` and start it by executing the built `jar`:
+Open a console/command window so you can build the `xoom-helloworld` and start it by executing the built `jar`:
 
 ```
 $ mvn clean package
 ...
-$ java -jar target/vlingo-helloworld.jar
+$ java -jar target/xoom-helloworld.jar
 ```
 
 The above `java` command executes the `jar` on the default port `18080`. If you would like to use
 a different port, you must provide it on the command line. This command uses port `8080`.
 
 ```
-$ java -jar target/vlingo-helloworld.jar 8080
+$ java -jar target/xoom-helloworld.jar 8080
 ```
 
 The following examples assume that have started the service with the default port, `18080`.
@@ -47,7 +47,7 @@ $ curl -i -X GET http://localhost:18080/hello/Me
 In this Hello resource example there is only one component involved. See the source code:
 
 ```
-io.vlingo.hello.resource.HelloResource
+io.vlingo.xoom.hello.resource.HelloResource
 ```
 
 ## Greeting Resource
@@ -130,20 +130,20 @@ Now both the `message` and the `description` and the corresponding counts have a
 In this `Greeting` resource example there are various component sets involved. See the following source code.
 
 ```
-io.vlingo.hello.Bootstrap
+io.vlingo.xoom.hello.Bootstrap
 
-io.vlingo.hello.resource.GreetingResource
+io.vlingo.xoom.hello.resource.GreetingResource
 
-io.vlingo.hello.model.Greeting
-io.vlingo.hello.model.GreetingEntity
-io.vlingo.hello.model.GreetingState
+io.vlingo.xoom.hello.model.Greeting
+io.vlingo.xoom.hello.model.GreetingEntity
+io.vlingo.xoom.hello.model.GreetingState
 
-io.vlingo.hello.infra.persistence.GreetingProjectionActor
+io.vlingo.xoom.hello.infra.persistence.GreetingProjectionActor
 
-io.vlingo.hello.infra.persistence.Queries
-io.vlingo.hello.infra.persistence.QueriesActor
+io.vlingo.xoom.hello.infra.persistence.Queries
+io.vlingo.xoom.hello.infra.persistence.QueriesActor
 
-io.vlingo.hello.infra.persistence.* - lower-level persistence setup and storage access
+io.vlingo.xoom.hello.infra.persistence.* - lower-level persistence setup and storage access
 ```
 
 ## Documentation
@@ -152,14 +152,14 @@ Documentation for the above components is found in the following links.
 
 **Suggestion: Right click and open in a new tab.**
 
-[Starting the World](https://docs.vlingo.io/vlingo-actors#starting-and-terminating-the-actor-runtime)
+[Starting the World](https://docs.vlingo.io/xoom-actors#starting-and-terminating-the-actor-runtime)
 
-[CQRS Command and Query Models](https://docs.vlingo.io/vlingo-lattice/entity-cqrs)
+[CQRS Command and Query Models](https://docs.vlingo.io/xoom-lattice/entity-cqrs)
 
-[StatefulEntity](https://docs.vlingo.io/vlingo-lattice/entity-cqrs#statefulentity-example)
+[StatefulEntity](https://docs.vlingo.io/xoom-lattice/entity-cqrs#statefulentity-example)
 
-[StateStore Persistence](https://docs.vlingo.io/vlingo-symbio/state-storage)
+[StateStore Persistence](https://docs.vlingo.io/xoom-symbio/state-storage)
 
-[Query Model Projections](https://docs.vlingo.io/vlingo-lattice/projections)
+[Query Model Projections](https://docs.vlingo.io/xoom-lattice/projections)
 
-[Reactive Storage](https://docs.vlingo.io/vlingo-symbio)
+[Reactive Storage](https://docs.vlingo.io/xoom-symbio)

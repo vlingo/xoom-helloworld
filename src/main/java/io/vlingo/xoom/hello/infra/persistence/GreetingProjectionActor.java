@@ -5,13 +5,13 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.infra.persistence;
+package io.vlingo.xoom.hello.infra.persistence;
 
-import io.vlingo.hello.infra.GreetingData;
-import io.vlingo.hello.model.Greeting.Operation;
-import io.vlingo.hello.model.GreetingState;
-import io.vlingo.lattice.model.projection.Projectable;
-import io.vlingo.lattice.model.projection.StateStoreProjectionActor;
+import io.vlingo.xoom.hello.infra.GreetingData;
+import io.vlingo.xoom.hello.model.Greeting.Operation;
+import io.vlingo.xoom.hello.model.GreetingState;
+import io.vlingo.xoom.lattice.model.projection.Projectable;
+import io.vlingo.xoom.lattice.model.projection.StateStoreProjectionActor;
 
 public class GreetingProjectionActor extends StateStoreProjectionActor<GreetingData> {
   private Operation becauseOf;

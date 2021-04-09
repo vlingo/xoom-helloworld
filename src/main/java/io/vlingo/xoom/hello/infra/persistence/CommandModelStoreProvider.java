@@ -5,22 +5,22 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.infra.persistence;
+package io.vlingo.xoom.hello.infra.persistence;
 
 import java.util.Arrays;
 
-import io.vlingo.actors.Definition;
-import io.vlingo.actors.Protocols;
-import io.vlingo.actors.Stage;
-import io.vlingo.hello.model.GreetingState;
-import io.vlingo.lattice.model.stateful.StatefulTypeRegistry;
-import io.vlingo.lattice.model.stateful.StatefulTypeRegistry.Info;
-import io.vlingo.symbio.EntryAdapterProvider;
-import io.vlingo.symbio.StateAdapterProvider;
-import io.vlingo.symbio.store.dispatch.Dispatcher;
-import io.vlingo.symbio.store.dispatch.DispatcherControl;
-import io.vlingo.symbio.store.state.StateStore;
-import io.vlingo.symbio.store.state.inmemory.InMemoryStateStoreActor;
+import io.vlingo.xoom.actors.Definition;
+import io.vlingo.xoom.actors.Protocols;
+import io.vlingo.xoom.actors.Stage;
+import io.vlingo.xoom.hello.model.GreetingState;
+import io.vlingo.xoom.lattice.model.stateful.StatefulTypeRegistry;
+import io.vlingo.xoom.lattice.model.stateful.StatefulTypeRegistry.Info;
+import io.vlingo.xoom.symbio.EntryAdapterProvider;
+import io.vlingo.xoom.symbio.StateAdapterProvider;
+import io.vlingo.xoom.symbio.store.dispatch.Dispatcher;
+import io.vlingo.xoom.symbio.store.dispatch.DispatcherControl;
+import io.vlingo.xoom.symbio.store.state.StateStore;
+import io.vlingo.xoom.symbio.store.state.inmemory.InMemoryStateStoreActor;
 
 public class CommandModelStoreProvider {
   private static CommandModelStoreProvider instance;

@@ -1,11 +1,11 @@
-package io.vlingo.hello.infra.resource;
+package io.vlingo.xoom.hello.infra.resource;
 
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import io.vlingo.hello.XoomInitializer;
-import io.vlingo.hello.infra.persistence.CommandModelStoreProvider;
-import io.vlingo.hello.infra.persistence.ProjectionDispatcherProvider;
-import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
+import io.vlingo.xoom.hello.XoomInitializer;
+import io.vlingo.xoom.hello.infra.persistence.CommandModelStoreProvider;
+import io.vlingo.xoom.hello.infra.persistence.ProjectionDispatcherProvider;
+import io.vlingo.xoom.hello.infra.persistence.QueryModelStoreProvider;
 import org.junit.After;
 import org.junit.Before;
 

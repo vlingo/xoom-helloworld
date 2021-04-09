@@ -1,8 +1,8 @@
-package io.vlingo.hello.infra.resource;
+package io.vlingo.xoom.hello.infra.resource;
 
-import io.vlingo.hello.infra.DescriptionData;
-import io.vlingo.hello.infra.GreetingData;
-import io.vlingo.hello.infra.MessageData;
+import io.vlingo.xoom.hello.infra.DescriptionData;
+import io.vlingo.xoom.hello.infra.GreetingData;
+import io.vlingo.xoom.hello.infra.MessageData;
 import org.junit.Test;
 
 import java.util.UUID;

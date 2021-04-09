@@ -5,12 +5,12 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.model;
+package io.vlingo.xoom.hello.model;
 
-import io.vlingo.actors.Address;
-import io.vlingo.actors.Definition;
-import io.vlingo.actors.Stage;
-import io.vlingo.common.Completes;
+import io.vlingo.xoom.actors.Address;
+import io.vlingo.xoom.actors.Definition;
+import io.vlingo.xoom.actors.Stage;
+import io.vlingo.xoom.common.Completes;
 
 /**
  * The Greeting protocol.

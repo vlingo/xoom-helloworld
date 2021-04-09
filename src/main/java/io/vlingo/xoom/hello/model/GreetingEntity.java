@@ -5,10 +5,10 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.model;
+package io.vlingo.xoom.hello.model;
 
-import io.vlingo.common.Completes;
-import io.vlingo.lattice.model.stateful.StatefulEntity;
+import io.vlingo.xoom.common.Completes;
+import io.vlingo.xoom.lattice.model.stateful.StatefulEntity;
 
 public class GreetingEntity extends StatefulEntity<GreetingState> implements Greeting {
   private GreetingState state;

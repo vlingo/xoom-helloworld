@@ -5,23 +5,23 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello;
+package io.vlingo.xoom.hello;
 
-import io.vlingo.actors.Grid;
-import io.vlingo.actors.Stage;
-import io.vlingo.hello.infra.persistence.CommandModelStoreProvider;
-import io.vlingo.hello.infra.persistence.ProjectionDispatcherProvider;
-import io.vlingo.hello.infra.persistence.QueryModelStoreProvider;
-import io.vlingo.lattice.model.stateful.StatefulTypeRegistry;
-import io.vlingo.xoom.XoomInitializationAware;
-import io.vlingo.xoom.annotation.initializer.ResourceHandlers;
-import io.vlingo.xoom.annotation.initializer.Xoom;
+import io.vlingo.xoom.actors.Grid;
+import io.vlingo.xoom.actors.Stage;
+import io.vlingo.xoom.hello.infra.persistence.CommandModelStoreProvider;
+import io.vlingo.xoom.hello.infra.persistence.ProjectionDispatcherProvider;
+import io.vlingo.xoom.hello.infra.persistence.QueryModelStoreProvider;
+import io.vlingo.xoom.lattice.model.stateful.StatefulTypeRegistry;
+import io.vlingo.xoom.turbo.XoomInitializationAware;
+import io.vlingo.xoom.turbo.annotation.initializer.ResourceHandlers;
+import io.vlingo.xoom.turbo.annotation.initializer.Xoom;
 
 /**
  * Start the service with a Server.
  */
 @Xoom(name = "hello-world")
-@ResourceHandlers(packages = "io.vlingo.hello.infra.resource")
+@ResourceHandlers(packages = "io.vlingo.xoom.hello.infra.resource")
 public class Bootstrap implements XoomInitializationAware {
 
   @Override

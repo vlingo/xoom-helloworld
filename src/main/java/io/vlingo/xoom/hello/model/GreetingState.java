@@ -5,7 +5,7 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.model;
+package io.vlingo.xoom.hello.model;
 
 /**
  * State held by the Greeting.

@@ -5,12 +5,12 @@
 // was not distributed with this file, You can obtain
 // one at https://mozilla.org/MPL/2.0/.
 
-package io.vlingo.hello.infra.persistence;
+package io.vlingo.xoom.hello.infra.persistence;
 
 import java.util.Collection;
 
-import io.vlingo.common.Completes;
-import io.vlingo.hello.infra.GreetingData;
+import io.vlingo.xoom.common.Completes;
+import io.vlingo.xoom.hello.infra.GreetingData;
 
 /**
  * The queries that may be run against the query model.
