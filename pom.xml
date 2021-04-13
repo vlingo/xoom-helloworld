@@ -4,7 +4,7 @@
   <artifactId>xoom-helloworld</artifactId>
   <version>1.6.1-SNAPSHOT</version>
   <name>xoom-helloworld</name>
-  <description>A "Hello, World!" service that demonstrates the use of the standard components of the vlingo/PLATFORM.</description>
+  <description>A "Hello, World!" service that demonstrates the use of the standard components of the VLINGO XOOM Platform.</description>
   <url>https://github.com/vlingo/xoom-helloworld</url>
   <licenses>
     <license>
