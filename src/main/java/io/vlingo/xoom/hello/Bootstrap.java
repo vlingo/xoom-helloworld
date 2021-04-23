@@ -7,11 +7,10 @@
 
 package io.vlingo.xoom.hello;
 
-import io.vlingo.xoom.actors.Grid;
-import io.vlingo.xoom.actors.Stage;
 import io.vlingo.xoom.hello.infra.persistence.CommandModelStoreProvider;
 import io.vlingo.xoom.hello.infra.persistence.ProjectionDispatcherProvider;
 import io.vlingo.xoom.hello.infra.persistence.QueryModelStoreProvider;
+import io.vlingo.xoom.lattice.grid.Grid;
 import io.vlingo.xoom.lattice.model.stateful.StatefulTypeRegistry;
 import io.vlingo.xoom.turbo.XoomInitializationAware;
 import io.vlingo.xoom.turbo.annotation.initializer.ResourceHandlers;
