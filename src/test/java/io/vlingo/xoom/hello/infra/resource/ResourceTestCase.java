@@ -28,8 +28,9 @@ abstract class ResourceTestCase {
   }
 
   @After
-  public void cleanUp() {
-    xoom.server().stop();
+  public void cleanUp() throws Exception {
+    xoom.stopServer().await(100);
+    xoom.terminateWorld();
 
     QueryModelStoreProvider.reset();
     ProjectionDispatcherProvider.reset();
