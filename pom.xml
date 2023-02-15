@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.vlingo.xoom</groupId>
   <artifactId>xoom-helloworld</artifactId>
-  <version>1.11.1-SNAPSHOT</version>
+  <version>1.11.2-SNAPSHOT</version>
   <name>xoom-helloworld</name>
   <description>A "Hello, World!" service that demonstrates the use of the standard components of the VLINGO XOOM Platform.</description>
   <url>https://github.com/vlingo/xoom-helloworld</url>
